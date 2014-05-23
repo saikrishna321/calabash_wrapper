@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>wrapper.rb</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: rgb(0,0,0); font-weight: normal; font-style: normal; }
+.s0 { color: rgb(169,183,198); }
+.s1 { color: rgb(106,135,89); }
+.s2 { color: rgb(188,148,88); font-style: italic; }
+.s3 { color: rgb(204,120,50); font-weight: bold; }
+.s4 { color: rgb(218,73,57); }
+.s5 { color: rgb(82,161,46); font-weight: bold; }
+.s6 { color: rgb(204,120,50); }
+.s7 { color: rgb(110,156,190); }
+.s8 { color: rgb(255,198,109); font-style: italic; }
+</style>
+</head>
+<BODY BGCOLOR="#2b2b2b">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#C0C0C0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+wrapper.rb</FONT>
+</center></TD></TR></TABLE>
+<pre>
+
+<span class="s0">require </span><span class="s1">'calabash-android/abase'</span><span class="s0"> 
+require </span><span class="s1">'calabash-android/operations'</span><span class="s0"> 
+ 
+</span><span class="s2">#author Sai Krishna</span><span class="s0"> 
+</span><span class="s2">#Version Tesco_1.0</span><span class="s0"> 
+ 
+ 
+</span><span class="s3">module </span><span class="s4">Wrapper</span><span class="s0"> 
+ 
+</span><span class="s2">#field - pass the argument as ID of the element to be touched</span><span class="s0"> 
+  </span><span class="s3">def </span><span class="s0">touch_screen(id) 
+ 
+    touch(</span><span class="s5">&quot;* marked:'</span><span class="s0">#{id}</span><span class="s5">'&quot;</span><span class="s0">) 
+ 
+  </span><span class="s3">end</span><span class="s0"> 
+ 
+</span><span class="s2">#id - pass the argument as ID of the element</span><span class="s0"> 
+</span><span class="s2">#text - Text to send into the editText Field</span><span class="s0"> 
+ 
+  </span><span class="s3">def </span><span class="s0">send_text(id</span><span class="s6">, </span><span class="s0">text) 
+    query(</span><span class="s5">&quot;* marked:'</span><span class="s0">#{id}</span><span class="s5">'&quot;</span><span class="s6">, </span><span class="s7">:setText </span><span class="s8">=&gt; </span><span class="s5">&quot;</span><span class="s0">#{text}</span><span class="s5">&quot;</span><span class="s0">) 
+ 
+  </span><span class="s3">end</span><span class="s0"> 
+ 
+</span><span class="s2">#id - pass the argument as ID of the element</span><span class="s0"> 
+</span><span class="s2">#waitTime - Time in seconds to wait for the element</span><span class="s0"> 
+  </span><span class="s3">def </span><span class="s0">wait_for_element(id</span><span class="s6">, </span><span class="s0">waitTime) 
+    wait_for_elements_exist [</span><span class="s5">&quot;* marked:'</span><span class="s0">#{id}</span><span class="s5">'&quot;</span><span class="s0">]</span><span class="s6">, </span><span class="s0">timeout: waitTime 
+  </span><span class="s3">end</span><span class="s0"> 
+ 
+  </span><span class="s2">#id - pass the argument as ID of the element</span><span class="s0"> 
+  </span><span class="s2">#waitTime - Time in seconds to wait for the element to disappear</span><span class="s0"> 
+  </span><span class="s3">def </span><span class="s0">wait_for_element_to_disapper(id</span><span class="s6">, </span><span class="s0">waitTime) 
+ 
+    wait_for_elements_do_not_exist [</span><span class="s5">&quot;* marked:'</span><span class="s0">#{id}</span><span class="s5">'&quot;</span><span class="s0">]</span><span class="s6">, </span><span class="s0">timeout: waitTime 
+  </span><span class="s3">end</span><span class="s0"> 
+ 
+</span><span class="s3">end</span></pre>
+</body>
+</html>
