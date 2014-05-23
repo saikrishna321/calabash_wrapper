@@ -7,7 +7,7 @@ When(/^I press button$/) do
   macro 'verify command'
 
   swipe_left_and_wait_to_animate(10,'row_list')
-
+  scroll_down_until_element_exists('blinkbox music')
 
 =begin
 
@@ -76,4 +76,25 @@ end
 
 def wait_to_animate(wait_time,element_to_animate)
   wait_for(:timeout => wait_time) { query("* marked:'#{element_to_animate}'").size > 0 }
+end
+
+
+def scroll_down_until_element_exists(elementID)
+
+    query_result = query("* marked:'#{elementID}'")
+    while query_result.empty?
+      performAction('scroll_down')
+      query_result = query("* marked:'#{elementID}'")
+    end
+    return query_result
+end
+
+def scroll_up_until_element_exists(elementID)
+
+  query_result = query("* marked:'#{elementID}'")
+  while query_result.empty?
+    performAction('scroll_up')
+    query_result = query("* marked:'#{elementID}'")
+  end
+  return query_result
 end
