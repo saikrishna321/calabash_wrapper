@@ -1,6 +1,6 @@
 require 'calabash-android/abase'
 require 'calabash-android/operations'
-require ''
+
 
 #author Sai Krishna
 #Version Tesco_1.0
