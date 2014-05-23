@@ -90,11 +90,14 @@ module Wrapper
   #wait_time - time in seconds
   #element_to_animate - element id to validate after the swipe
   def swipe_left_and_wait_to_animate(wait_time, element_to_animate)
-    performAction('swipe', 'left')
-    wait_to_animate(wait_time, element_to_animate)
-  else
-    if ENV['PLATFORM'] == 'iPhone'
-      #TODO Suhas Pls add Iphone swipe test
+    if ENV['PLATFORM'] == 'android'
+      performAction('swipe', 'left')
+      wait_to_animate(wait_time, element_to_animate)
+    else
+      if ENV['PLATFORM'] == 'iPhone'
+        #TODO Suhas Pls add Iphone swipe test
+
+      end
     end
   end
 
@@ -103,5 +106,16 @@ module Wrapper
   def wait_to_animate(wait_time, element_to_animate)
     wait_for(:timeout => wait_time) { query("* marked:'#{element_to_animate}'").size > 0 }
   end
+
+  def scroll_down_until_element_exists(elementID)
+
+    query_result = query("* marked:'#{elementID}'")
+    while query_result.empty?
+      performAction('scroll_down')
+      query_result = query("* marked:'#{elementID}'")
+    end
+    return query_result
+  end
+
 
 end
