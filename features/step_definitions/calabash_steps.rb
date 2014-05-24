@@ -7,7 +7,7 @@ When(/^I press button$/) do
   macro 'verify command'
 
   swipe_left_and_wait_to_animate(10,'row_list')
-  scroll_down_until_element_exists('blinkbox music')
+ # scroll_down_until_element_exists('blinkbox music')
 
 =begin
 
