@@ -9,3 +9,5 @@ require File.expand_path('../lib/android-adb/Package', File.dirname(__FILE__))
 adb = AndroidAdb::Adb.new({:show_stderr => true})
 puts "Packages:"
 pp adb.get_packages
+
+puts 'master'
