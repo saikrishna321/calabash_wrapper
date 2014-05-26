@@ -11,7 +11,7 @@ puts "Devices:"
 
 pp adb.get_devices
 
-=begin
+
 $device_id=adb.get_devices
 count_device=adb.get_devices.count
 
@@ -31,12 +31,9 @@ count_device.times do |i|
 system(command)
 
 
-end
-
 
 
 #command = "calabash-android run /Users/saikrishna/Calabash-Android/com.tesco.grocery.view-Signed-1.apk_debug.apk ADB_DEVICE_ARG="+ adb.get_devices[0]+ " TEST_SERVER_PORT="+test_port+""
 
 
-
-=end
+end
