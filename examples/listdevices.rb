@@ -10,8 +10,7 @@ adb = AndroidAdb::Adb.new()
 puts "Devices:"
 
 pp adb.get_devices
-
-=begin
+begin
 $device_id=adb.get_devices
 count_device=adb.get_devices.count
 
@@ -29,7 +28,7 @@ count_device.times do |i|
   puts command
 
 system(command)
-
+	end
 
 end
 
@@ -39,4 +38,4 @@ end
 
 
 
-=end
+
