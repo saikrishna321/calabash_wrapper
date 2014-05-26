@@ -10,6 +10,7 @@ module Wrapper
 
 #field - pass the argument as ID of the element to be touched
 
+
   def touch_screen(id)
 
     touch("* marked:'#{id}'")
