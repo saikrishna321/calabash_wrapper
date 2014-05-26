@@ -1,0 +1,9 @@
+start_test_server_in_background
+query("*")
+exit
+start_test_server_in_background
+query("* marked:'blinkbox music'")
+query("* marked:'blinkbox music'")
+exit
+start_test_server_in_background
+performAction('drag',10,10,50,10,1)
