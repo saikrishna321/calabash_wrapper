@@ -12,7 +12,7 @@ require 'calabash-android/wait_helpers'
 module Wrapper_Methods
 
 
-	def touch_screen(id)
+def touch_screen(id)
 
 		touch("* marked:'#{id}'")
 
@@ -48,10 +48,12 @@ module Wrapper_Methods
 #wait_for_keyboard - works only with iPhone and iPad
 
 	def send_text(id, text, options={:wait_for_keyboard => true})
-		if ENV['PLATFORM'] == 'android'
+
+		puts 'PLATFORM'
+		if ENV['PLATFORM'] =='android'
 			query("* marked:'#{id}'", :setText => "#{text}")
 		else
-			if ENV['PLATFORM'] == 'iPhone'
+			if ENV['PLATFORM'] == 'ios'
 				touch(id)
 				wait_for_keyboard unless options[:wait_for_keyboard] == false
 				keyboard_enter_text(text)
