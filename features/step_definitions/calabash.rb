@@ -3,14 +3,14 @@ require 'calabash-android/abase'
 
 require 'rubygems'
 require "pp"
-require File.expand_path('../../commonmethods/sample',File.dirname(__FILE__))
+require File.expand_path('../../commonmethods/appIds', File.dirname(__FILE__))
 require File.expand_path('../../commonmethods/wrapper',File.dirname(__FILE__))
 
 require File.expand_path('../../lib/android-adb/Adb', File.dirname(__FILE__))
 require File.expand_path('../../lib/android-adb/Device', File.dirname(__FILE__))
 
 include Testdata
-include Wrapper
+#include Wrapper_Methods
 When(/^I call macro methods and i must see the devices connected$/) do
 
 

@@ -12,7 +12,7 @@ require 'calabash-android/wait_helpers'
 module Wrapper_Methods
 
 
-def touch_screen(id)
+	def touch_screen(id)
 
 		touch("* marked:'#{id}'")
 
@@ -26,7 +26,7 @@ def touch_screen(id)
 # @param [Object] id
 # @param [Object] waitTime
 	public_methods
-	def wait_for_element(id, waitTime)
+ def wait_for_element(id, waitTime)
 		wait_for_elements_exist ["* marked:'#{id}'"], timeout: waitTime
 	end
 
@@ -49,7 +49,6 @@ def touch_screen(id)
 
 	def send_text(id, text, options={:wait_for_keyboard => true})
 
-		puts 'PLATFORM'
 		if ENV['PLATFORM'] =='android'
 			query("* marked:'#{id}'", :setText => "#{text}")
 		else

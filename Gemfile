@@ -10,7 +10,7 @@ gemspec android-adb.gemspec
 gem 'Platform', '>= 0.4.0'
 gem 'calabash-cucumber'
 gem 'calabash-android', '0.4.23.tesco1'
-
+gem 'cucumber_timing_presenter', '~> 1.0.0.0'
 
 gem 'rake'
 

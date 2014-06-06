@@ -6,6 +6,7 @@ require 'calabash-android/wait_helpers'
 require File.expand_path('../commonmethods/appIds', File.dirname(__FILE__))
 require File.expand_path('../commonmethods/wrapper', File.dirname(__FILE__))
 
+
 class AppWrapper < Calabash::ABase
 	include Wrapper_Methods
 	include Testdata
@@ -48,11 +49,16 @@ class AppWrapper < Calabash::ABase
 		send_text($user_name, username)
 		send_text($password, password)
 		touch_screen($sign_in)
+		sleep(5)
 
 
 	end
 
 
+	def add_item
+
+		touch_screen($add_item_button)
+	end
 end
 
 
